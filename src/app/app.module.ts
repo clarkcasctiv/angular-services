@@ -1,3 +1,5 @@
+import { AccountsService } from './accounts.service';
+import { LoggingService } from './logging.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,17 +10,9 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AccountComponent,
-    NewAccountComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
+  declarations: [AppComponent, AccountComponent, NewAccountComponent],
+  imports: [BrowserModule, FormsModule, HttpModule],
+  providers: [LoggingService, AccountsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
